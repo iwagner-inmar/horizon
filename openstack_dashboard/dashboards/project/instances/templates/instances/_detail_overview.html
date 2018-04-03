@@ -78,24 +78,7 @@
       {% endfor %}
     </dl>
 
-    <h4>{% trans "Security Groups" %}</h4>
-    <hr class="header_rule">
-    <dl class="dl-horizontal">
-      {% for group in instance.security_groups %}
-        <dt>{{ group.name }}</dt>
-        <dd>
-          <ul class="list-unstyled">
-          {% for rule in group.rules %}
-            <li>{{ rule }}</li>
-            {% empty %}
-            <li><em>{% trans "No rules defined." %}</em></li>
-          {% endfor %}
-          </ul>
-        </dd>
-        {% empty %}
-        {% trans "Not available" %}
-      {% endfor %}
-    </dl>
+
 
     <h4>{% trans "Metadata" %}</h4>
     <hr class="header_rule">
@@ -142,7 +125,3 @@
         </dd>
         {% empty %}
         <dt>{% trans "Volume" %}</dt>
-        <dd><em>{% trans "No volumes attached." %}</em></dd>
-    {% endfor %}
-    </dl>
-</div>
